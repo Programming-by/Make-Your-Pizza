@@ -33,9 +33,9 @@
             this.rbMedium = new System.Windows.Forms.RadioButton();
             this.rbLarge = new System.Windows.Forms.RadioButton();
             this.gbSize = new System.Windows.Forms.GroupBox();
-            this.gbCrust = new System.Windows.Forms.GroupBox();
-            this.rbThin = new System.Windows.Forms.RadioButton();
-            this.rbThick = new System.Windows.Forms.RadioButton();
+            this.gbCrustType = new System.Windows.Forms.GroupBox();
+            this.rbThinCrust = new System.Windows.Forms.RadioButton();
+            this.rbThickCrust = new System.Windows.Forms.RadioButton();
             this.gbWhereToEat = new System.Windows.Forms.GroupBox();
             this.rbEatIn = new System.Windows.Forms.RadioButton();
             this.rbTakeOut = new System.Windows.Forms.RadioButton();
@@ -47,21 +47,21 @@
             this.chkTomatoes = new System.Windows.Forms.CheckBox();
             this.chkMushrooms = new System.Windows.Forms.CheckBox();
             this.chkExtraChees = new System.Windows.Forms.CheckBox();
-            this.btnOrderButton = new System.Windows.Forms.Button();
+            this.btnOrderPizza = new System.Windows.Forms.Button();
             this.btnResetForm = new System.Windows.Forms.Button();
             this.labelOrderSummary = new System.Windows.Forms.Label();
             this.labelSize = new System.Windows.Forms.Label();
-            this.labelCurrentSize = new System.Windows.Forms.Label();
+            this.lblSize = new System.Windows.Forms.Label();
             this.labelToppings = new System.Windows.Forms.Label();
-            this.labelCurrentToppings = new System.Windows.Forms.Label();
+            this.lblToppings = new System.Windows.Forms.Label();
             this.labelCrustType = new System.Windows.Forms.Label();
-            this.labelCurrentCrustType = new System.Windows.Forms.Label();
+            this.lblCrustType = new System.Windows.Forms.Label();
             this.labelWhereToEat = new System.Windows.Forms.Label();
-            this.labelCurrentWhereToEat = new System.Windows.Forms.Label();
+            this.lblWhereToEat = new System.Windows.Forms.Label();
             this.labelTotalPrice = new System.Windows.Forms.Label();
-            this.labelCurrentTotalPrice = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.gbSize.SuspendLayout();
-            this.gbCrust.SuspendLayout();
+            this.gbCrustType.SuspendLayout();
             this.gbWhereToEat.SuspendLayout();
             this.gbToppings.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,7 @@
             this.rbSmall.Size = new System.Drawing.Size(62, 20);
             this.rbSmall.TabIndex = 1;
             this.rbSmall.TabStop = true;
+            this.rbSmall.Tag = "20";
             this.rbSmall.Text = "Small";
             this.rbSmall.UseVisualStyleBackColor = true;
             this.rbSmall.CheckedChanged += new System.EventHandler(this.rbSmall_CheckedChanged);
@@ -97,6 +98,7 @@
             this.rbMedium.Size = new System.Drawing.Size(76, 20);
             this.rbMedium.TabIndex = 2;
             this.rbMedium.TabStop = true;
+            this.rbMedium.Tag = "30";
             this.rbMedium.Text = "Medium";
             this.rbMedium.UseVisualStyleBackColor = true;
             this.rbMedium.CheckedChanged += new System.EventHandler(this.rbMedium_CheckedChanged);
@@ -109,6 +111,7 @@
             this.rbLarge.Size = new System.Drawing.Size(63, 20);
             this.rbLarge.TabIndex = 3;
             this.rbLarge.TabStop = true;
+            this.rbLarge.Tag = "40";
             this.rbLarge.Text = "Large";
             this.rbLarge.UseVisualStyleBackColor = true;
             this.rbLarge.CheckedChanged += new System.EventHandler(this.rbLarge_CheckedChanged);
@@ -125,40 +128,42 @@
             this.gbSize.TabStop = false;
             this.gbSize.Text = "Size";
             // 
-            // gbCrust
+            // gbCrustType
             // 
-            this.gbCrust.Controls.Add(this.rbThin);
-            this.gbCrust.Controls.Add(this.rbThick);
-            this.gbCrust.Location = new System.Drawing.Point(86, 291);
-            this.gbCrust.Name = "gbCrust";
-            this.gbCrust.Size = new System.Drawing.Size(200, 119);
-            this.gbCrust.TabIndex = 5;
-            this.gbCrust.TabStop = false;
-            this.gbCrust.Text = "Crust";
+            this.gbCrustType.Controls.Add(this.rbThinCrust);
+            this.gbCrustType.Controls.Add(this.rbThickCrust);
+            this.gbCrustType.Location = new System.Drawing.Point(86, 291);
+            this.gbCrustType.Name = "gbCrustType";
+            this.gbCrustType.Size = new System.Drawing.Size(200, 119);
+            this.gbCrustType.TabIndex = 5;
+            this.gbCrustType.TabStop = false;
+            this.gbCrustType.Text = "Crust";
             // 
-            // rbThin
+            // rbThinCrust
             // 
-            this.rbThin.AutoSize = true;
-            this.rbThin.Location = new System.Drawing.Point(35, 31);
-            this.rbThin.Name = "rbThin";
-            this.rbThin.Size = new System.Drawing.Size(87, 20);
-            this.rbThin.TabIndex = 1;
-            this.rbThin.TabStop = true;
-            this.rbThin.Text = "Thin Crust";
-            this.rbThin.UseVisualStyleBackColor = true;
-            this.rbThin.CheckedChanged += new System.EventHandler(this.rbThin_CheckedChanged);
+            this.rbThinCrust.AutoSize = true;
+            this.rbThinCrust.Location = new System.Drawing.Point(35, 31);
+            this.rbThinCrust.Name = "rbThinCrust";
+            this.rbThinCrust.Size = new System.Drawing.Size(87, 20);
+            this.rbThinCrust.TabIndex = 1;
+            this.rbThinCrust.TabStop = true;
+            this.rbThinCrust.Tag = "0";
+            this.rbThinCrust.Text = "Thin Crust";
+            this.rbThinCrust.UseVisualStyleBackColor = true;
+            this.rbThinCrust.CheckedChanged += new System.EventHandler(this.rbThin_CheckedChanged);
             // 
-            // rbThick
+            // rbThickCrust
             // 
-            this.rbThick.AutoSize = true;
-            this.rbThick.Location = new System.Drawing.Point(35, 70);
-            this.rbThick.Name = "rbThick";
-            this.rbThick.Size = new System.Drawing.Size(94, 20);
-            this.rbThick.TabIndex = 2;
-            this.rbThick.TabStop = true;
-            this.rbThick.Text = "Thick Crust";
-            this.rbThick.UseVisualStyleBackColor = true;
-            this.rbThick.CheckedChanged += new System.EventHandler(this.rbThick_CheckedChanged);
+            this.rbThickCrust.AutoSize = true;
+            this.rbThickCrust.Location = new System.Drawing.Point(35, 70);
+            this.rbThickCrust.Name = "rbThickCrust";
+            this.rbThickCrust.Size = new System.Drawing.Size(94, 20);
+            this.rbThickCrust.TabIndex = 2;
+            this.rbThickCrust.TabStop = true;
+            this.rbThickCrust.Tag = "10";
+            this.rbThickCrust.Text = "Thick Crust";
+            this.rbThickCrust.UseVisualStyleBackColor = true;
+            this.rbThickCrust.CheckedChanged += new System.EventHandler(this.rbThick_CheckedChanged);
             // 
             // gbWhereToEat
             // 
@@ -217,6 +222,7 @@
             this.chkGreenPeppers.Name = "chkGreenPeppers";
             this.chkGreenPeppers.Size = new System.Drawing.Size(118, 20);
             this.chkGreenPeppers.TabIndex = 18;
+            this.chkGreenPeppers.Tag = "5";
             this.chkGreenPeppers.Text = "GreenPeppers";
             this.chkGreenPeppers.UseVisualStyleBackColor = true;
             this.chkGreenPeppers.CheckedChanged += new System.EventHandler(this.chkGreenPeppers_CheckedChanged);
@@ -228,6 +234,7 @@
             this.chkOlives.Name = "chkOlives";
             this.chkOlives.Size = new System.Drawing.Size(67, 20);
             this.chkOlives.TabIndex = 17;
+            this.chkOlives.Tag = "5";
             this.chkOlives.Text = "Olives";
             this.chkOlives.UseVisualStyleBackColor = true;
             this.chkOlives.CheckedChanged += new System.EventHandler(this.chkOlives_CheckedChanged);
@@ -239,6 +246,7 @@
             this.chkOnion.Name = "chkOnion";
             this.chkOnion.Size = new System.Drawing.Size(64, 20);
             this.chkOnion.TabIndex = 16;
+            this.chkOnion.Tag = "5";
             this.chkOnion.Text = "Onion";
             this.chkOnion.UseVisualStyleBackColor = true;
             this.chkOnion.CheckedChanged += new System.EventHandler(this.chkOnion_CheckedChanged);
@@ -250,6 +258,7 @@
             this.chkTomatoes.Name = "chkTomatoes";
             this.chkTomatoes.Size = new System.Drawing.Size(91, 20);
             this.chkTomatoes.TabIndex = 15;
+            this.chkTomatoes.Tag = "5";
             this.chkTomatoes.Text = "Tomatoes";
             this.chkTomatoes.UseVisualStyleBackColor = true;
             this.chkTomatoes.CheckedChanged += new System.EventHandler(this.chkTomatoes_CheckedChanged);
@@ -261,6 +270,7 @@
             this.chkMushrooms.Name = "chkMushrooms";
             this.chkMushrooms.Size = new System.Drawing.Size(99, 20);
             this.chkMushrooms.TabIndex = 14;
+            this.chkMushrooms.Tag = "5";
             this.chkMushrooms.Text = "Mushrooms";
             this.chkMushrooms.UseVisualStyleBackColor = true;
             this.chkMushrooms.CheckedChanged += new System.EventHandler(this.chkMushrooms_CheckedChanged);
@@ -272,19 +282,20 @@
             this.chkExtraChees.Name = "chkExtraChees";
             this.chkExtraChees.Size = new System.Drawing.Size(101, 20);
             this.chkExtraChees.TabIndex = 13;
+            this.chkExtraChees.Tag = "5";
             this.chkExtraChees.Text = "Extra Chees";
             this.chkExtraChees.UseVisualStyleBackColor = true;
             this.chkExtraChees.CheckedChanged += new System.EventHandler(this.chkExtraChees_CheckedChanged);
             // 
-            // btnOrderButton
+            // btnOrderPizza
             // 
-            this.btnOrderButton.Location = new System.Drawing.Point(374, 435);
-            this.btnOrderButton.Name = "btnOrderButton";
-            this.btnOrderButton.Size = new System.Drawing.Size(160, 48);
-            this.btnOrderButton.TabIndex = 15;
-            this.btnOrderButton.Text = "Order Button";
-            this.btnOrderButton.UseVisualStyleBackColor = true;
-            this.btnOrderButton.Click += new System.EventHandler(this.btnOrderButton_Click);
+            this.btnOrderPizza.Location = new System.Drawing.Point(374, 435);
+            this.btnOrderPizza.Name = "btnOrderPizza";
+            this.btnOrderPizza.Size = new System.Drawing.Size(160, 48);
+            this.btnOrderPizza.TabIndex = 15;
+            this.btnOrderPizza.Text = "Order Button";
+            this.btnOrderPizza.UseVisualStyleBackColor = true;
+            this.btnOrderPizza.Click += new System.EventHandler(this.btnOrderButton_Click);
             // 
             // btnResetForm
             // 
@@ -315,14 +326,14 @@
             this.labelSize.TabIndex = 18;
             this.labelSize.Text = "Size:";
             // 
-            // labelCurrentSize
+            // lblSize
             // 
-            this.labelCurrentSize.AutoSize = true;
-            this.labelCurrentSize.Location = new System.Drawing.Point(890, 177);
-            this.labelCurrentSize.Name = "labelCurrentSize";
-            this.labelCurrentSize.Size = new System.Drawing.Size(41, 16);
-            this.labelCurrentSize.TabIndex = 19;
-            this.labelCurrentSize.Text = "Small";
+            this.lblSize.AutoSize = true;
+            this.lblSize.Location = new System.Drawing.Point(890, 177);
+            this.lblSize.Name = "lblSize";
+            this.lblSize.Size = new System.Drawing.Size(41, 16);
+            this.lblSize.TabIndex = 19;
+            this.lblSize.Text = "Small";
             // 
             // labelToppings
             // 
@@ -334,14 +345,14 @@
             this.labelToppings.TabIndex = 20;
             this.labelToppings.Text = "Toppings:";
             // 
-            // labelCurrentToppings
+            // lblToppings
             // 
-            this.labelCurrentToppings.AutoSize = true;
-            this.labelCurrentToppings.Location = new System.Drawing.Point(861, 266);
-            this.labelCurrentToppings.Name = "labelCurrentToppings";
-            this.labelCurrentToppings.Size = new System.Drawing.Size(86, 16);
-            this.labelCurrentToppings.TabIndex = 21;
-            this.labelCurrentToppings.Text = "No Toppings";
+            this.lblToppings.AutoSize = true;
+            this.lblToppings.Location = new System.Drawing.Point(861, 266);
+            this.lblToppings.Name = "lblToppings";
+            this.lblToppings.Size = new System.Drawing.Size(86, 16);
+            this.lblToppings.TabIndex = 21;
+            this.lblToppings.Text = "No Toppings";
             // 
             // labelCrustType
             // 
@@ -353,14 +364,14 @@
             this.labelCrustType.TabIndex = 22;
             this.labelCrustType.Text = "Crust Type:";
             // 
-            // labelCurrentCrustType
+            // lblCrustType
             // 
-            this.labelCurrentCrustType.AutoSize = true;
-            this.labelCurrentCrustType.Location = new System.Drawing.Point(954, 343);
-            this.labelCurrentCrustType.Name = "labelCurrentCrustType";
-            this.labelCurrentCrustType.Size = new System.Drawing.Size(66, 16);
-            this.labelCurrentCrustType.TabIndex = 23;
-            this.labelCurrentCrustType.Text = "Thin Crust";
+            this.lblCrustType.AutoSize = true;
+            this.lblCrustType.Location = new System.Drawing.Point(954, 343);
+            this.lblCrustType.Name = "lblCrustType";
+            this.lblCrustType.Size = new System.Drawing.Size(66, 16);
+            this.lblCrustType.TabIndex = 23;
+            this.lblCrustType.Text = "Thin Crust";
             // 
             // labelWhereToEat
             // 
@@ -372,14 +383,14 @@
             this.labelWhereToEat.TabIndex = 24;
             this.labelWhereToEat.Text = "Where To Eat:";
             // 
-            // labelCurrentWhereToEat
+            // lblWhereToEat
             // 
-            this.labelCurrentWhereToEat.AutoSize = true;
-            this.labelCurrentWhereToEat.Location = new System.Drawing.Point(981, 392);
-            this.labelCurrentWhereToEat.Name = "labelCurrentWhereToEat";
-            this.labelCurrentWhereToEat.Size = new System.Drawing.Size(40, 16);
-            this.labelCurrentWhereToEat.TabIndex = 25;
-            this.labelCurrentWhereToEat.Text = "Eat In";
+            this.lblWhereToEat.AutoSize = true;
+            this.lblWhereToEat.Location = new System.Drawing.Point(981, 392);
+            this.lblWhereToEat.Name = "lblWhereToEat";
+            this.lblWhereToEat.Size = new System.Drawing.Size(40, 16);
+            this.lblWhereToEat.TabIndex = 25;
+            this.lblWhereToEat.Text = "Eat In";
             // 
             // labelTotalPrice
             // 
@@ -391,46 +402,46 @@
             this.labelTotalPrice.TabIndex = 26;
             this.labelTotalPrice.Text = "Total Price:";
             // 
-            // labelCurrentTotalPrice
+            // lblTotalPrice
             // 
-            this.labelCurrentTotalPrice.AutoSize = true;
-            this.labelCurrentTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentTotalPrice.ForeColor = System.Drawing.Color.Green;
-            this.labelCurrentTotalPrice.Location = new System.Drawing.Point(954, 442);
-            this.labelCurrentTotalPrice.Name = "labelCurrentTotalPrice";
-            this.labelCurrentTotalPrice.Size = new System.Drawing.Size(55, 38);
-            this.labelCurrentTotalPrice.TabIndex = 27;
-            this.labelCurrentTotalPrice.Text = "$0";
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.Green;
+            this.lblTotalPrice.Location = new System.Drawing.Point(954, 442);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(55, 38);
+            this.lblTotalPrice.TabIndex = 27;
+            this.lblTotalPrice.Text = "$0";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 541);
-            this.Controls.Add(this.labelCurrentTotalPrice);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.labelTotalPrice);
-            this.Controls.Add(this.labelCurrentWhereToEat);
+            this.Controls.Add(this.lblWhereToEat);
             this.Controls.Add(this.labelWhereToEat);
-            this.Controls.Add(this.labelCurrentCrustType);
+            this.Controls.Add(this.lblCrustType);
             this.Controls.Add(this.labelCrustType);
-            this.Controls.Add(this.labelCurrentToppings);
+            this.Controls.Add(this.lblToppings);
             this.Controls.Add(this.labelToppings);
-            this.Controls.Add(this.labelCurrentSize);
+            this.Controls.Add(this.lblSize);
             this.Controls.Add(this.labelSize);
             this.Controls.Add(this.labelOrderSummary);
             this.Controls.Add(this.btnResetForm);
-            this.Controls.Add(this.btnOrderButton);
+            this.Controls.Add(this.btnOrderPizza);
             this.Controls.Add(this.gbToppings);
             this.Controls.Add(this.gbWhereToEat);
-            this.Controls.Add(this.gbCrust);
+            this.Controls.Add(this.gbCrustType);
             this.Controls.Add(this.gbSize);
             this.Controls.Add(this.label1);
             this.Name = "frmMain";
             this.Text = "Pizza Order";
             this.gbSize.ResumeLayout(false);
             this.gbSize.PerformLayout();
-            this.gbCrust.ResumeLayout(false);
-            this.gbCrust.PerformLayout();
+            this.gbCrustType.ResumeLayout(false);
+            this.gbCrustType.PerformLayout();
             this.gbWhereToEat.ResumeLayout(false);
             this.gbWhereToEat.PerformLayout();
             this.gbToppings.ResumeLayout(false);
@@ -447,9 +458,9 @@
         private System.Windows.Forms.RadioButton rbMedium;
         private System.Windows.Forms.RadioButton rbLarge;
         private System.Windows.Forms.GroupBox gbSize;
-        private System.Windows.Forms.GroupBox gbCrust;
-        private System.Windows.Forms.RadioButton rbThin;
-        private System.Windows.Forms.RadioButton rbThick;
+        private System.Windows.Forms.GroupBox gbCrustType;
+        private System.Windows.Forms.RadioButton rbThinCrust;
+        private System.Windows.Forms.RadioButton rbThickCrust;
         private System.Windows.Forms.GroupBox gbWhereToEat;
         private System.Windows.Forms.RadioButton rbEatIn;
         private System.Windows.Forms.RadioButton rbTakeOut;
@@ -461,19 +472,19 @@
         private System.Windows.Forms.CheckBox chkTomatoes;
         private System.Windows.Forms.CheckBox chkMushrooms;
         private System.Windows.Forms.CheckBox chkExtraChees;
-        private System.Windows.Forms.Button btnOrderButton;
+        private System.Windows.Forms.Button btnOrderPizza;
         private System.Windows.Forms.Button btnResetForm;
         private System.Windows.Forms.Label labelOrderSummary;
         private System.Windows.Forms.Label labelSize;
-        private System.Windows.Forms.Label labelCurrentSize;
+        private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.Label labelToppings;
-        private System.Windows.Forms.Label labelCurrentToppings;
+        private System.Windows.Forms.Label lblToppings;
         private System.Windows.Forms.Label labelCrustType;
-        private System.Windows.Forms.Label labelCurrentCrustType;
+        private System.Windows.Forms.Label lblCrustType;
         private System.Windows.Forms.Label labelWhereToEat;
-        private System.Windows.Forms.Label labelCurrentWhereToEat;
+        private System.Windows.Forms.Label lblWhereToEat;
         private System.Windows.Forms.Label labelTotalPrice;
-        private System.Windows.Forms.Label labelCurrentTotalPrice;
+        private System.Windows.Forms.Label lblTotalPrice;
     }
 }
 
