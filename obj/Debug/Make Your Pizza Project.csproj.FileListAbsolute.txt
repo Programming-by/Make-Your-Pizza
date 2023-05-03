@@ -1,0 +1,11 @@
+C:\Users\User\Source\Repos\Make Your Pizza Project\bin\Debug\Make Your Pizza Project.exe.config
+C:\Users\User\Source\Repos\Make Your Pizza Project\bin\Debug\Make Your Pizza Project.exe
+C:\Users\User\Source\Repos\Make Your Pizza Project\bin\Debug\Make Your Pizza Project.pdb
+C:\Users\User\Source\Repos\Make Your Pizza Project\obj\Debug\Make Your Pizza Project.csproj.AssemblyReference.cache
+C:\Users\User\Source\Repos\Make Your Pizza Project\obj\Debug\Make Your Pizza Project.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Source\Repos\Make Your Pizza Project\obj\Debug\Make_Your_Pizza_Project.frmMain.resources
+C:\Users\User\Source\Repos\Make Your Pizza Project\obj\Debug\Make_Your_Pizza_Project.Properties.Resources.resources
+C:\Users\User\Source\Repos\Make Your Pizza Project\obj\Debug\Make Your Pizza Project.csproj.GenerateResource.cache
+C:\Users\User\Source\Repos\Make Your Pizza Project\obj\Debug\Make Your Pizza Project.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\Make Your Pizza Project\obj\Debug\Make Your Pizza Project.exe
+C:\Users\User\Source\Repos\Make Your Pizza Project\obj\Debug\Make Your Pizza Project.pdb
