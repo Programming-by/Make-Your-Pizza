@@ -48,10 +48,14 @@ namespace Make_Your_Pizza_Project
             {
 
                 lblCrustType.Text = "Thin Crust";
-            } else
+                return;
+
+            }
+
+            if (rbThickCrust.Checked)
             {
                 lblCrustType.Text = "Thick Crust";
-
+                return;
             }
         }
 
@@ -63,7 +67,7 @@ namespace Make_Your_Pizza_Project
 
             if (chkExtraChees.Checked)
             {
-                sToppings += "Extra Chees";
+                sToppings = "Extra Chees";
 
             }
 
@@ -117,9 +121,13 @@ namespace Make_Your_Pizza_Project
             {
 
                 lblWhereToEat.Text = rbEatIn.Text;
-            } else
+                return;
+
+            }
+            if (rbTakeOut.Checked)
             {
-                lblWhereToEat.Text = rbTakeOut.Text;
+                lblWhereToEat.Text = "Take Out.";
+                return;
             }
 
         }
@@ -211,12 +219,26 @@ namespace Make_Your_Pizza_Project
         private void btnResetForm_Click(object sender, EventArgs e)
         {
             gbSize.Enabled = true;
-            gbCrustType.Enabled = true;
             gbToppings.Enabled = true;
+            gbCrustType.Enabled = true;
             gbWhereToEat.Enabled = true;
+
+            rbMedium.Checked = true;
+
+            chkExtraChees.Checked = false;
+            chkMushrooms.Checked = false;
+            chkTomatoes.Checked = false;
+            chkOnion.Checked = false;
+            chkOlives.Checked = false;
+            chkGreenPeppers.Checked = false;
+
+            rbThinCrust.Checked = true;
+
+            rbEatIn.Checked = true; 
+
             btnOrderPizza.Enabled = true;
 
-            lblTotalPrice.Text = "$" + 0;
+
 
     }
 
@@ -311,5 +333,22 @@ namespace Make_Your_Pizza_Project
                 gbWhereToEat.Enabled = false;
             }
         }
+
+        void UpdateOrderSummary()
+        {
+            UpdateSize();
+            UpdateToppings();
+            UpdateCrust();
+            UpdateWhereToEat();
+            UpdateTotalPrice();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            UpdateOrderSummary();
+          
+        }
+
+       
     }
 }
